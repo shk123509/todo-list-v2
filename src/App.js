@@ -24,6 +24,8 @@ import AuthSuccess from './components/AuthSuccess';
 import ProtectedRoute from './components/ProtectedRoute';
 import ChatBot from './components/ChatBot';
 import Shop from './components/Shop';
+import LaptopPricePredictor from './components/LaptopPricePredictor';
+import HousingPricePredictor from './components/HousingPricePredictor';
 import ScrollToTop from './components/ScrollToTop';
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -63,6 +65,8 @@ const AppContent = () => {
           <Route path="/bookmarks" element={<ProtectedRoute><Bookmarks /></ProtectedRoute>} />
           <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
           <Route path="/shop" element={<ProtectedRoute><Shop /></ProtectedRoute>} />
+          <Route path="/laptop-price-predictor" element={<ProtectedRoute><LaptopPricePredictor /></ProtectedRoute>} />
+          <Route path="/housing-price-predictor" element={<ProtectedRoute><HousingPricePredictor /></ProtectedRoute>} />
         </Routes>
         
         {/* Global Components */}

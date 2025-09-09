@@ -1179,7 +1179,7 @@ const Shop = () => {
   };
 
   const getTotalPrice = () => {
-    return cart.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2);
+    return (cart.reduce((total, item) => total + (item.price * item.quantity), 0) * 83).toFixed(0);
   };
 
   const filteredProducts = products.filter(product => {
@@ -1195,7 +1195,7 @@ const Shop = () => {
     const amazonUrl = `https://www.amazon.com/s?k=${encodeURIComponent(searchQuery)}`;
     
     // Show confirmation
-    const userConfirm = window.confirm(`Total: $${getTotalPrice()}\n\nClick OK to search these items on Amazon for real purchase.\n\nItems: ${cart.map(item => `\n- ${item.name} (x${item.quantity})`).join('')}`);
+    const userConfirm = window.confirm(`Total: ₹${getTotalPrice()}\n\nClick OK to search these items on Amazon India for real purchase.\n\nItems: ${cart.map(item => `\n- ${item.name} (x${item.quantity})`).join('')}`);
     
     if (userConfirm) {
       window.open(amazonUrl, '_blank');
@@ -1281,14 +1281,6 @@ const Shop = () => {
               >
                 <div className="product-image">
                   <img src={product.image} alt={product.name} />
-                  <div className="product-overlay">
-                    <button 
-                      className="quick-view-btn btn-animated"
-                      onClick={() => addToCart(product)}
-                    >
-                      Add to Cart
-                    </button>
-                  </div>
                 </div>
 
                 <div className="product-info">
@@ -1328,33 +1320,21 @@ const Shop = () => {
                   </div>
 
                 <div className="product-footer">
-                    <div className="product-price">${product.price}</div>
+                    <div className="product-price">₹{(product.price * 83).toFixed(0)}</div>
                     <div className="product-actions">
                       <button 
                         className="add-to-cart-btn btn-animated hover-glow"
                         onClick={() => addToCart(product)}
                       >
-                        Add to Cart
+                        <i className="fas fa-shopping-cart"></i> Add to Cart
                       </button>
                       <a 
-                        href={`https://www.amazon.com/s?k=${encodeURIComponent(product.name)}`}
+                        href={`https://www.amazon.in/s?k=${encodeURIComponent(product.name)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="buy-now-btn btn-animated hover-glow"
-                        style={{
-                          marginLeft: '10px',
-                          padding: '8px 16px',
-                          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                          color: 'white',
-                          border: 'none',
-                          borderRadius: '8px',
-                          textDecoration: 'none',
-                          display: 'inline-block',
-                          fontSize: '14px',
-                          fontWeight: '600'
-                        }}
                       >
-                        Buy Now
+                        <i className="fas fa-bolt"></i> Buy Now
                       </a>
                     </div>
                   </div>
@@ -1386,7 +1366,7 @@ const Shop = () => {
                     <img src={item.image} alt={item.name} />
                     <div className="item-details">
                       <h4>{item.name}</h4>
-                      <p>${item.price}</p>
+                      <p>₹{(item.price * 83).toFixed(0)}</p>
                       <div className="quantity-controls">
                         <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>-</button>
                         <span>{item.quantity}</span>
@@ -1404,7 +1384,7 @@ const Shop = () => {
             {cart.length > 0 && (
               <div className="cart-footer">
                 <div className="cart-total">
-                  <strong>Total: ${getTotalPrice()}</strong>
+                  <strong>Total: ₹{getTotalPrice()}</strong>
                 </div>
                 <button className="checkout-btn btn-animated hover-glow" onClick={handleCheckout}>
                   Checkout 💳

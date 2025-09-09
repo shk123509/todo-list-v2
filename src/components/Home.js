@@ -132,22 +132,36 @@ export default class HomePage extends Component {
                   <span className="feature-icon">🛍️</span>
                   <span className="feature-text">Premium Shop</span>
                 </div>
+                <div className="feature-item hover-lift">
+                  <span className="feature-icon">💻</span>
+                  <span className="feature-text">Price Predictor</span>
+                </div>
               </div>
               
               <div className="cta-buttons animate-slide-in-up animate-delay-5">
                 <Link to="/trending" className="cta-btn cta-btn-primary btn-animated hover-glow">
                   <span className="btn-icon">🔥</span>
-                  <span className="btn-text">Explore Trending</span>
+                  <span className="btn-text">Explore</span>
                   <span className="btn-arrow">→</span>
                 </Link>
                 <Link to="/shop" className="cta-btn cta-btn-secondary btn-animated hover-lift">
                   <span className="btn-icon">🛍️</span>
-                  <span className="btn-text">Visit Shop</span>
+                  <span className="btn-text">Shop</span>
+                  <span className="btn-arrow">→</span>
+                </Link>
+                <Link to="/laptop-price-predictor" className="cta-btn cta-btn-tertiary btn-animated hover-glow">
+                  <span className="btn-icon">💻</span>
+                  <span className="btn-text">Laptop Price</span>
+                  <span className="btn-arrow">→</span>
+                </Link>
+                <Link to="/housing-price-predictor" className="cta-btn cta-btn-special btn-animated hover-glow">
+                  <span className="btn-icon">🏠</span>
+                  <span className="btn-text">Housing Price</span>
                   <span className="btn-arrow">→</span>
                 </Link>
                 <Link to="/NewsMonkey" className="cta-btn cta-btn-outline btn-animated">
                   <span className="btn-icon">📰</span>
-                  <span className="btn-text">Read News</span>
+                  <span className="btn-text">News</span>
                 </Link>
               </div>
               
@@ -220,6 +234,66 @@ export default class HomePage extends Component {
                     <button onClick={() => window.dispatchEvent(new CustomEvent('toggleChatBot'))} className="feature-link btn-animated">
                       Chat with AI <i className="fas fa-arrow-right"></i>
                     </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Second Row of Features */}
+            <div className="row mt-4">
+              <div className="col-lg-3 col-md-6 mb-4 animate-fade-in-up animate-delay-5">
+                <div className="feature-card hover-lift interactive-card card-animated">
+                  <div className="feature-icon-container">
+                    <span className="feature-icon animate-float">🛍️</span>
+                  </div>
+                  <h3 className="feature-title text-gradient">Premium Shop</h3>
+                  <p className="feature-description">Browse our curated collection of developer tools, books, electronics, and more premium products.</p>
+                  <div className="feature-footer">
+                    <Link to="/shop" className="feature-link btn-animated">
+                      Visit Shop <i className="fas fa-arrow-right"></i>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6 mb-4 animate-fade-in-up animate-delay-6">
+                <div className="feature-card hover-lift interactive-card card-animated">
+                  <div className="feature-icon-container">
+                    <span className="feature-icon animate-float">💻</span>
+                  </div>
+                  <h3 className="feature-title text-gradient">Laptop Price Predictor</h3>
+                  <p className="feature-description">Use our ML-powered predictor to estimate laptop prices based on specifications and features.</p>
+                  <div className="feature-footer">
+                    <Link to="/laptop-price-predictor" className="feature-link btn-animated">
+                      Predict Prices <i className="fas fa-arrow-right"></i>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6 mb-4 animate-fade-in-up animate-delay-7">
+                <div className="feature-card hover-lift interactive-card card-animated">
+                  <div className="feature-icon-container">
+                    <span className="feature-icon animate-float">📰</span>
+                  </div>
+                  <h3 className="feature-title text-gradient">News Categories</h3>
+                  <p className="feature-description">Explore news across Business, Technology, Health, Sports, Entertainment, and Science.</p>
+                  <div className="feature-footer">
+                    <Link to="/NewsMonkey" className="feature-link btn-animated">
+                      Browse Categories <i className="fas fa-arrow-right"></i>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6 mb-4 animate-fade-in-up animate-delay-8">
+                <div className="feature-card hover-lift interactive-card card-animated">
+                  <div className="feature-icon-container">
+                    <span className="feature-icon animate-float">🏠</span>
+                  </div>
+                  <h3 className="feature-title text-gradient">Housing Price Predictor</h3>
+                  <p className="feature-description">Get accurate property valuations using AI-powered predictions for real estate.</p>
+                  <div className="feature-footer">
+                    <Link to="/housing-price-predictor" className="feature-link btn-animated">
+                      Property Valuation <i className="fas fa-arrow-right"></i>
+                    </Link>
                   </div>
                 </div>
               </div>
