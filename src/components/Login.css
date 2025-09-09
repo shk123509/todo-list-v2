@@ -618,9 +618,11 @@
   border: none;
   background: none;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   transform-style: preserve-3d;
   transition: transform 0.3s ease;
+  z-index: 10;
 }
 
 .btn-3d-content {
@@ -629,7 +631,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 18px;
+  padding: 18px 24px;
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
   font-size: 16px;
@@ -638,7 +640,8 @@
   border-radius: 15px;
   transition: all 0.3s ease;
   transform: translateZ(20px);
-  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+  min-height: 56px;
 }
 
 .btn-3d-shadow {

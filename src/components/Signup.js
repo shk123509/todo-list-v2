@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import './Signup.css';
+import './SignupEnhanced.css';
 
 const Signup = (props) => {
   const setAlert = props.setAlert || (() => {});

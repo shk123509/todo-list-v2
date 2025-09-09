@@ -1,6 +1,6 @@
-/* Modern Signup Component Styles */
+/* Enhanced 3D Signup Component Styles */
 
-.signup-container {
+.signup-3d-container {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -9,6 +9,7 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  perspective: 1000px;
 }
 
 /* Background Elements */
