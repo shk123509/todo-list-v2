@@ -24,7 +24,7 @@ const Shop = () => {
           id: 1,
           name: 'MacBook Pro M3',
           price: 1999.99,
-          image: 'https://picsum.photos/300/300?random=1',
+          image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80',
           category: 'Electronics',
           description: 'Latest MacBook Pro with M3 chip, perfect for development',
           rating: 4.9,
@@ -34,7 +34,7 @@ const Shop = () => {
           id: 2,
           name: 'AirPods Pro',
           price: 249.99,
-          image: 'https://picsum.photos/300/300?random=2',
+          image: 'https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=800&q=80',
           category: 'Electronics',
           description: 'Wireless earbuds with noise cancellation',
           rating: 4.8,
@@ -44,7 +44,7 @@ const Shop = () => {
           id: 3,
           name: 'iPhone 15 Pro',
           price: 1099.99,
-          image: 'https://picsum.photos/300/300?random=3',
+          image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=800&q=80',
           category: 'Electronics',
           description: 'Latest iPhone with advanced camera system',
           rating: 4.8,
@@ -54,7 +54,7 @@ const Shop = () => {
           id: 4,
           name: 'Samsung 4K Smart TV',
           price: 799.99,
-          image: 'https://picsum.photos/300/300?random=4',
+          image: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=800&q=80',
           category: 'Electronics',
           description: '55-inch 4K UHD Smart TV with HDR',
           rating: 4.5,
@@ -64,7 +64,7 @@ const Shop = () => {
           id: 5,
           name: 'Sony Wireless Headphones',
           price: 299.99,
-          image: 'https://picsum.photos/300/300?random=5',
+          image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80',
           category: 'Electronics',
           description: 'Premium wireless headphones with ANC',
           rating: 4.7,
@@ -76,7 +76,7 @@ const Shop = () => {
           id: 6,
           name: 'React Programming Book',
           price: 49.99,
-          image: 'https://picsum.photos/300/300?random=6',
+          image: 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=800&q=80',
           category: 'Books',
           description: 'Master React.js with this comprehensive guide',
           rating: 4.7,
@@ -87,7 +87,7 @@ const Shop = () => {
           // eslint-disable-next-line no-script-url
           name: 'JavaScript: The Good Parts',
           price: 34.99,
-          image: 'https://picsum.photos/300/300?random=7',
+          image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=800&q=80',
           category: 'Books',
           description: 'Essential JavaScript programming guide',
           rating: 4.6,
@@ -97,7 +97,7 @@ const Shop = () => {
           id: 8,
           name: 'Clean Code',
           price: 42.99,
-          image: 'https://picsum.photos/300/300?random=8',
+          image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&q=80',
           category: 'Books',
           description: 'A handbook of agile software craftsmanship',
           rating: 4.8,
@@ -107,7 +107,7 @@ const Shop = () => {
           id: 9,
           name: 'Design Patterns',
           price: 54.99,
-          image: 'https://picsum.photos/300/300?random=9',
+          image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&q=80',
           category: 'Books',
           description: 'Elements of reusable object-oriented software',
           rating: 4.5,
@@ -117,7 +117,7 @@ const Shop = () => {
           id: 10,
           name: 'The Art of Computer Programming',
           price: 199.99,
-          image: 'https://picsum.photos/300/300?random=10',
+          image: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?w=800&q=80',
           category: 'Books',
           description: 'Knuth\'s legendary computer science series',
           rating: 4.9,
@@ -129,7 +129,7 @@ const Shop = () => {
           id: 11,
           name: 'Developer Hoodie',
           price: 79.99,
-          image: 'https://picsum.photos/300/300?random=1',
+          image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80',
           category: 'Clothing',
           description: 'Premium quality hoodie for developers',
           rating: 4.5,
@@ -139,7 +139,7 @@ const Shop = () => {
           id: 12,
           name: 'Coding T-Shirt Collection',
           price: 29.99,
-          image: 'https://picsum.photos/300/300?random=2',
+          image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80',
           category: 'Clothing',
           description: 'Funny programming themed t-shirts',
           rating: 4.3,
@@ -149,7 +149,7 @@ const Shop = () => {
           id: 13,
           name: 'Tech Conference Sweatshirt',
           price: 65.99,
-          image: 'https://picsum.photos/300/300?random=3',
+          image: 'https://images.unsplash.com/photo-1578932750294-f5075e85f44a?w=800&q=80',
           category: 'Clothing',
           description: 'Comfortable sweatshirt for tech events',
           rating: 4.4,
@@ -159,7 +159,7 @@ const Shop = () => {
           id: 14,
           name: 'Premium Sneakers',
           price: 149.99,
-          image: 'https://picsum.photos/300/300?random=4',
+          image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80',
           category: 'Clothing',
           description: 'Comfortable sneakers for daily wear',
           rating: 4.6,
@@ -171,7 +171,7 @@ const Shop = () => {
           id: 15,
           name: 'Spotify Premium (1 Year)',
           price: 99.99,
-          image: 'https://picsum.photos/300/300?random=5',
+          image: 'https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=800&q=80',
           category: 'Music',
           description: 'Premium music streaming service',
           rating: 4.6,
@@ -181,7 +181,7 @@ const Shop = () => {
           id: 16,
           name: 'Apple Music (1 Year)',
           price: 119.99,
-          image: 'https://picsum.photos/300/300?random=6',
+          image: 'https://images.unsplash.com/photo-1611339555312-e607c8352fd7?w=800&q=80',
           category: 'Music',
           description: 'High-quality music streaming with lossless audio',
           rating: 4.4,
@@ -191,7 +191,7 @@ const Shop = () => {
           id: 17,
           name: 'Vinyl Record Collection',
           price: 199.99,
-          image: 'https://picsum.photos/300/300?random=7',
+          image: 'https://images.unsplash.com/photo-1539375665275-f9de415ef9ac?w=800&q=80',
           category: 'Music',
           description: 'Classic albums on vinyl records',
           rating: 4.8,
@@ -201,7 +201,7 @@ const Shop = () => {
           id: 18,
           name: 'Professional Microphone',
           price: 179.99,
-          image: 'https://picsum.photos/300/300?random=8',
+          image: 'https://images.unsplash.com/photo-1611339555312-e607c8352fd7?w=800&q=80',
           category: 'Music',
           description: 'Studio-grade microphone for recording',
           rating: 4.7,
@@ -213,7 +213,7 @@ const Shop = () => {
           id: 19,
           name: 'VS Code Extensions Pack',
           price: 29.99,
-          image: 'https://picsum.photos/300/300?random=9',
+          image: 'https://images.unsplash.com/photo-1556155092-490a1ba16284?w=800&q=80',
           category: 'Software',
           description: 'Essential VS Code extensions for developers',
           rating: 4.9,
@@ -223,7 +223,7 @@ const Shop = () => {
           id: 20,
           name: 'Adobe Creative Suite',
           price: 599.99,
-          image: 'https://picsum.photos/300/300?random=10',
+          image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80',
           category: 'Software',
           description: 'Complete creative suite for professionals',
           rating: 4.7,
@@ -233,7 +233,7 @@ const Shop = () => {
           id: 21,
           name: 'Microsoft Office 365',
           price: 99.99,
-          image: 'https://picsum.photos/300/300?random=11',
+          image: 'https://images.unsplash.com/photo-1611162618071-b39a2ec1f363?w=800&q=80',
           category: 'Software',
           description: 'Complete productivity suite',
           rating: 4.5,
@@ -243,7 +243,7 @@ const Shop = () => {
           id: 22,
           name: 'IntelliJ IDEA Ultimate',
           price: 149.99,
-          image: 'https://picsum.photos/300/300?random=12',
+          image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80',
           category: 'Software',
           description: 'Professional IDE for Java development',
           rating: 4.8,
@@ -255,7 +255,7 @@ const Shop = () => {
           id: 23,
           name: 'Gaming Mechanical Keyboard',
           price: 159.99,
-          image: 'https://picsum.photos/300/300?random=13',
+          image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80',
           category: 'Gaming',
           description: 'RGB mechanical keyboard for gaming',
           rating: 4.6,
@@ -265,7 +265,7 @@ const Shop = () => {
           id: 24,
           name: 'Gaming Mouse',
           price: 79.99,
-          image: 'https://picsum.photos/300/300?random=14',
+          image: 'https://images.unsplash.com/photo-1587202372775-98927b643c3b?w=800&q=80',
           category: 'Gaming',
           description: 'High-precision gaming mouse with RGB',
           rating: 4.5,
@@ -275,7 +275,7 @@ const Shop = () => {
           id: 25,
           name: 'VR Headset',
           price: 399.99,
-          image: 'https://picsum.photos/300/300?random=15',
+          image: 'https://images.unsplash.com/photo-1581472723648-909f4851d4ae?w=800&q=80',
           category: 'Gaming',
           description: 'Immersive virtual reality headset',
           rating: 4.4,
@@ -285,7 +285,7 @@ const Shop = () => {
           id: 26,
           name: 'Gaming Chair',
           price: 299.99,
-          image: 'https://picsum.photos/300/300?random=16',
+          image: 'https://images.unsplash.com/photo-1513185041617-8ab03f83d6c5?w=800&q=80',
           category: 'Gaming',
           description: 'Ergonomic gaming chair with lumbar support',
           rating: 4.7,
@@ -297,7 +297,7 @@ const Shop = () => {
           id: 27,
           name: 'Fitness Tracker',
           price: 199.99,
-          image: 'https://picsum.photos/300/300?random=17',
+          image: 'https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?w=800&q=80',
           category: 'Health',
           description: 'Advanced fitness tracker with heart rate monitor',
           rating: 4.5,
@@ -307,7 +307,7 @@ const Shop = () => {
           id: 28,
           name: 'Yoga Mat Premium',
           price: 79.99,
-          image: 'https://picsum.photos/300/300?random=18',
+          image: 'https://images.unsplash.com/photo-1599050751795-5d0b08b11f49?w=800&q=80',
           category: 'Health',
           description: 'Non-slip premium yoga mat',
           rating: 4.6,
@@ -317,7 +317,7 @@ const Shop = () => {
           id: 29,
           name: 'Protein Powder',
           price: 49.99,
-          image: 'https://picsum.photos/300/300?random=19',
+          image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80',
           category: 'Health',
           description: 'High-quality whey protein supplement',
           rating: 4.3,
@@ -329,7 +329,7 @@ const Shop = () => {
           id: 30,
           name: 'Smart Home Hub',
           price: 149.99,
-          image: 'https://picsum.photos/300/300?random=20',
+          image: 'https://images.unsplash.com/photo-1587578932405-7a5e447d4a03?w=800&q=80',
           category: 'Home',
           description: 'Central hub for smart home devices',
           rating: 4.4,
@@ -339,7 +339,7 @@ const Shop = () => {
           id: 31,
           name: 'Robot Vacuum',
           price: 299.99,
-          image: 'https://picsum.photos/300/300?random=21',
+          image: 'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=800&q=80',
           category: 'Home',
           description: 'Autonomous robot vacuum cleaner',
           rating: 4.5,
@@ -349,7 +349,7 @@ const Shop = () => {
           id: 32,
           name: 'Air Purifier',
           price: 199.99,
-          image: 'https://picsum.photos/300/300?random=22',
+          image: 'https://images.unsplash.com/photo-1556449890-0361b5b52c43?w=800&q=80',
           category: 'Home',
           description: 'HEPA air purifier for clean air',
           rating: 4.6,
@@ -361,7 +361,7 @@ const Shop = () => {
           id: 33,
           name: 'Digital Drawing Tablet',
           price: 249.99,
-          image: 'https://picsum.photos/300/300?random=23',
+          image: 'https://images.unsplash.com/photo-1611162618071-b39a2ec1f363?w=800&q=80',
           category: 'Art',
           description: 'Professional drawing tablet for digital art',
           rating: 4.7,
@@ -371,7 +371,7 @@ const Shop = () => {
           id: 34,
           name: 'Art Supply Set',
           price: 89.99,
-          image: 'https://picsum.photos/300/300?random=24',
+          image: 'https://images.unsplash.com/photo-1505745226314-22f2b2fd0c9b?w=800&q=80',
           category: 'Art',
           description: 'Complete set of professional art supplies',
           rating: 4.4,
@@ -383,7 +383,7 @@ const Shop = () => {
           id: 35,
           name: 'Travel Backpack',
           price: 129.99,
-          image: 'https://picsum.photos/300/300?random=25',
+          image: 'https://images.unsplash.com/photo-1555617766-5ce8f04967f8?w=800&q=80',
           category: 'Travel',
           description: 'Durable travel backpack with laptop compartment',
           rating: 4.6,
@@ -393,7 +393,7 @@ const Shop = () => {
           id: 36,
           name: 'Portable Charger',
           price: 39.99,
-          image: 'https://picsum.photos/300/300?random=26',
+          image: 'https://images.unsplash.com/photo-1622519407655-c9e1cbb24980?w=800&q=80',
           category: 'Travel',
           description: 'High-capacity portable phone charger',
           rating: 4.5,
@@ -405,7 +405,7 @@ const Shop = () => {
           id: 37,
           name: 'Premium Coffee Beans',
           price: 24.99,
-          image: 'https://picsum.photos/300/300?random=27',
+          image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80',
           category: 'Food',
           description: 'Single-origin specialty coffee beans',
           rating: 4.8,
@@ -415,7 +415,7 @@ const Shop = () => {
           id: 38,
           name: 'Organic Tea Collection',
           price: 34.99,
-          image: 'https://picsum.photos/300/300?random=28',
+          image: 'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=800&q=80',
           category: 'Food',
           description: 'Assorted organic tea varieties',
           rating: 4.5,
@@ -425,7 +425,7 @@ const Shop = () => {
           id: 39,
           name: 'Gourmet Chocolate Box',
           price: 49.99,
-          image: 'https://picsum.photos/300/300?random=29',
+          image: 'https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=800&q=80',
           category: 'Food',
           description: 'Luxury chocolate collection',
           rating: 4.7,
@@ -435,7 +435,7 @@ const Shop = () => {
           id: 40,
           name: 'Cooking Spice Set',
           price: 39.99,
-          image: 'https://picsum.photos/300/300?random=30',
+          image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&q=80',
           category: 'Food',
           description: 'Professional cooking spices and herbs',
           rating: 4.4,
@@ -447,7 +447,7 @@ const Shop = () => {
           id: 41,
           name: 'Dell XPS 13 Laptop',
           price: 1299.99,
-          image: 'https://picsum.photos/300/300?random=31',
+          image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=800&q=80',
           category: 'Electronics',
           description: '13.3" 4K Display, Intel i7, 16GB RAM, 512GB SSD, Windows 11 Pro',
           features: ['4K InfinityEdge Display', '11th Gen Intel Core i7', '16GB LPDDR4x', '512GB PCIe SSD', 'Thunderbolt 4', '12+ hour battery'],
@@ -458,7 +458,7 @@ const Shop = () => {
           id: 42,
           name: 'Canon EOS R5 Camera',
           price: 3899.99,
-          image: 'https://picsum.photos/300/300?random=32',
+          image: 'https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=800&q=80',
           category: 'Electronics',
           description: '45MP Full-Frame Mirrorless Camera with 8K Video Recording',
           features: ['45MP CMOS Sensor', '8K RAW Video', 'In-body Stabilization', 'Dual Card Slots', 'Weather Sealed', 'WiFi & Bluetooth'],
@@ -469,7 +469,7 @@ const Shop = () => {
           id: 43,
           name: 'Samsung Galaxy S24 Ultra',
           price: 1199.99,
-          image: 'https://picsum.photos/300/300?random=33',
+          image: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=800&q=80',
           category: 'Electronics',
           description: '512GB, Titanium Gray, S Pen Included, 200MP Camera',
           features: ['6.8" Dynamic AMOLED', '200MP Main Camera', 'S Pen Included', '5000mAh Battery', '45W Fast Charging', 'IP68 Rating'],
@@ -480,7 +480,7 @@ const Shop = () => {
           id: 44,
           name: 'LG UltraWide Monitor 34"',
           price: 449.99,
-          image: 'https://picsum.photos/300/300?random=34',
+          image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80',
           category: 'Electronics',
           description: '34" 21:9 UltraWide QHD IPS Monitor with USB-C',
           features: ['3440x1440 Resolution', 'IPS Panel', 'USB-C Connectivity', '99% sRGB', 'HDR10 Support', 'Height Adjustable'],
@@ -493,7 +493,7 @@ const Shop = () => {
           id: 45,
           name: 'Adobe Creative Cloud',
           price: 599.99,
-          image: 'https://picsum.photos/300/300?random=35',
+          image: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=800&q=80',
           category: 'Software',
           description: 'Complete Creative Suite - Photoshop, Illustrator, Premiere Pro & More',
           features: ['Photoshop 2024', 'Illustrator', 'Premiere Pro', 'After Effects', 'Lightroom', '100GB Cloud Storage'],
@@ -1190,9 +1190,18 @@ const Shop = () => {
   });
 
   const handleCheckout = () => {
-    alert(`Thank you for your purchase of $${getTotalPrice()}! This is a demo checkout.`);
-    setCart([]);
-    setCartOpen(false);
+    // Create Amazon search query with all cart items
+    const searchQuery = cart.map(item => item.name).join(' ');
+    const amazonUrl = `https://www.amazon.com/s?k=${encodeURIComponent(searchQuery)}`;
+    
+    // Show confirmation
+    const userConfirm = window.confirm(`Total: $${getTotalPrice()}\n\nClick OK to search these items on Amazon for real purchase.\n\nItems: ${cart.map(item => `\n- ${item.name} (x${item.quantity})`).join('')}`);
+    
+    if (userConfirm) {
+      window.open(amazonUrl, '_blank');
+      setCart([]);
+      setCartOpen(false);
+    }
   };
 
   if (loading) {
@@ -1318,14 +1327,36 @@ const Shop = () => {
                     <span className="rating-text">({product.reviews} reviews)</span>
                   </div>
 
-                  <div className="product-footer">
+                <div className="product-footer">
                     <div className="product-price">${product.price}</div>
-                    <button 
-                      className="add-to-cart-btn btn-animated hover-glow"
-                      onClick={() => addToCart(product)}
-                    >
-                      Add to Cart
-                    </button>
+                    <div className="product-actions">
+                      <button 
+                        className="add-to-cart-btn btn-animated hover-glow"
+                        onClick={() => addToCart(product)}
+                      >
+                        Add to Cart
+                      </button>
+                      <a 
+                        href={`https://www.amazon.com/s?k=${encodeURIComponent(product.name)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="buy-now-btn btn-animated hover-glow"
+                        style={{
+                          marginLeft: '10px',
+                          padding: '8px 16px',
+                          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '8px',
+                          textDecoration: 'none',
+                          display: 'inline-block',
+                          fontSize: '14px',
+                          fontWeight: '600'
+                        }}
+                      >
+                        Buy Now
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

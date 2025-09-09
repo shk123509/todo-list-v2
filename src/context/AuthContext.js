@@ -63,15 +63,26 @@ export const AuthProvider = ({ children }) => {
     const checkAuthStatus = useCallback(async () => {
         const token = localStorage.getItem("token");
         
-        // Demo user for fallback
+        // Load persisted profile from localStorage
+        const storedProfile = localStorage.getItem('userProfile');
+        let savedProfile = null;
+        if (storedProfile) {
+            try {
+                savedProfile = JSON.parse(storedProfile);
+            } catch (e) {
+                console.log('Failed to parse stored profile');
+            }
+        }
+        
+        // Demo user for fallback with saved profile data merged
         const demoUser = {
             _id: 'demo-user-id',
-            name: 'MD Shakib Demo',
-            email: 'demo@newsboard.com',
-            bio: 'NewsBoard Demo User - Full Stack Developer passionate about creating amazing user experiences.',
-            location: 'Mumbai, India',
-            website: 'https://newsboard.com',
-            profilePicture: null,
+            name: savedProfile?.name || 'MD Shakib Demo',
+            email: savedProfile?.email || 'demo@newsboard.com',
+            bio: savedProfile?.bio || 'NewsBoard Demo User - Full Stack Developer passionate about creating amazing user experiences.',
+            location: savedProfile?.location || 'Mumbai, India',
+            website: savedProfile?.website || 'https://newsboard.com',
+            profilePicture: savedProfile?.profilePicture || null,
             joinedAt: '2024-01-01T00:00:00.000Z'
         };
         
@@ -90,7 +101,15 @@ export const AuthProvider = ({ children }) => {
                 if (response.ok) {
                     const userData = await response.json();
                     if (userData && !userData.error) {
-                        setUser(userData);
+                        // Merge with saved profile data if available
+                        const mergedUser = {
+                            ...userData,
+                            profilePicture: savedProfile?.profilePicture || userData.profilePicture,
+                            bio: savedProfile?.bio || userData.bio,
+                            location: savedProfile?.location || userData.location,
+                            website: savedProfile?.website || userData.website
+                        };
+                        setUser(mergedUser);
                         setIsAuthenticated(true);
                         setAuthToken(token);
                         setLoading(false);
@@ -133,27 +152,46 @@ export const AuthProvider = ({ children }) => {
 
     const updateProfile = async (profileData) => {
         try {
-            // For demo purposes, just update local state
-            setUser(prevUser => ({ ...prevUser, ...profileData }));
-            return { success: true };
+            // Update local state
+            const updatedUser = { ...user, ...profileData };
+            setUser(updatedUser);
             
-            // In real app, would make API call:
-            /* 
-            const response = await fetch("http://localhost:5000/api/auth/updateprofile", {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json",
-                    "auth-token": authToken
-                },
-                body: JSON.stringify(profileData)
-            });
-            const data = await response.json();
-            if (data.success) {
-                setUser(data.user);
-                return { success: true };
+            // Store profile data in localStorage for persistence
+            const profileToStore = {
+                name: updatedUser.name,
+                email: updatedUser.email,
+                bio: updatedUser.bio,
+                location: updatedUser.location,
+                website: updatedUser.website,
+                profilePicture: updatedUser.profilePicture
+            };
+            localStorage.setItem('userProfile', JSON.stringify(profileToStore));
+            
+            // If not demo mode, try to update on server
+            if (authToken && authToken !== 'demo-token') {
+                try {
+                    const API_BASE = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+                    const response = await fetch(`${API_BASE}/api/auth/updateprofile`, {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "auth-token": authToken
+                        },
+                        body: JSON.stringify(profileData)
+                    });
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        if (data.user) {
+                            setUser(data.user);
+                        }
+                    }
+                } catch (error) {
+                    console.log("Server update failed, using local storage", error);
+                }
             }
-            return { success: false, message: data.message };
-            */
+            
+            return { success: true };
         } catch (error) {
             console.error("Profile update error:", error);
             return { success: false, message: "Failed to update profile" };

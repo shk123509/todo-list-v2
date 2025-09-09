@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import NewsItems from './NewsItems';
 import Spinner from './Spinner';
 import './UltraModernDashboard.css';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, LineElement, PointElement } from 'chart.js';
@@ -14,8 +13,7 @@ export class UltraModernDashboard extends Component {
     this.state = {
       stats: null,
       recentBookmarks: [],
-      personalizedNews: [],
-      loading: true,
+      loading: false,
       error: null,
       user: null,
       timeOfDay: this.getTimeOfDay(),
@@ -108,45 +106,25 @@ export class UltraModernDashboard extends Component {
           title: 'AI Revolution: GPT-5 Changes Everything', 
           category: 'technology', 
           bookmarkedAt: new Date(),
-          image: 'https://via.placeholder.com/100x100/4F46E5/ffffff?text=AI'
+          image: 'https://picsum.photos/100/100?random=' + Math.random()
         },
         { 
           title: 'Stock Market Hits Record High', 
           category: 'business', 
           bookmarkedAt: new Date(),
-          image: 'https://via.placeholder.com/100x100/10B981/ffffff?text=$'
+          image: 'https://picsum.photos/100/100?random=' + Math.random()
         },
         { 
           title: 'SpaceX Mars Mission Update', 
           category: 'science', 
           bookmarkedAt: new Date(),
-          image: 'https://via.placeholder.com/100x100/F59E0B/ffffff?text=🚀'
+          image: 'https://picsum.photos/100/100?random=' + Math.random()
         }
       ]
     });
 
-    // Fetch personalized news
-    await this.fetchPersonalizedNews();
   }
 
-  fetchPersonalizedNews = async () => {
-    try {
-      const response = await fetch(`/api/news/top?category=technology&pageSize=6&country=in`);
-      const data = await response.json();
-
-      if (data.status === 'ok') {
-        this.setState({
-          personalizedNews: data.articles || [],
-          loading: false
-        });
-      } else {
-        this.setState({ loading: false });
-      }
-    } catch (error) {
-      this.setState({ loading: false });
-      console.error('Failed to fetch personalized news:', error);
-    }
-  };
 
   getCategoryIcon = (category) => {
     const icons = {
@@ -175,7 +153,7 @@ export class UltraModernDashboard extends Component {
   }
 
   render() {
-    const { stats, recentBookmarks, personalizedNews, loading, timeOfDay, quote, currentTime, weatherData, notifications } = this.state;
+    const { stats, recentBookmarks, loading, timeOfDay, quote, currentTime, weatherData, notifications } = this.state;
 
     if (loading) return <Spinner />;
 
@@ -441,28 +419,6 @@ export class UltraModernDashboard extends Component {
           </Link>
         </div>
 
-        {/* Personalized News */}
-        <div className="news-section-3d">
-          <h2 className="section-title-3d">
-            <span className="title-icon">📰</span>
-            Recommended For You
-          </h2>
-          <div className="news-grid-3d">
-            {personalizedNews.slice(0, 6).map((article, index) => (
-              <div key={index} className="news-card-3d glass-card hover-3d">
-                <NewsItems
-                  title={article.title}
-                  des={article.description}
-                  imageUrl={article.urlToImage}
-                  NewsUrl={article.url}
-                  author={article.author}
-                  publishedAt={article.publishedAt}
-                  category="recommended"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     );
   }

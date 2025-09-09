@@ -148,7 +148,7 @@ function Navbar() {
                     {weatherService.getWeatherEmoji(weather.condition, weather.icon)} {weather.temperature}°C
                   </button>
                   <div className="dropdown-menu dropdown-menu-end" style={{
-                    background: 'rgba(255,255,255,0.95)',
+                    background: 'rgba(28, 185, 38, 0.95)',
                     backdropFilter: 'blur(20px)',
                     border: 'none',
                     borderRadius: '12px',

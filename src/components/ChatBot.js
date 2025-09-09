@@ -146,6 +146,79 @@ const ChatBot = () => {
   const processMessageWithAI = async (message) => {
     const lowerMessage = message.toLowerCase();
 
+    // Greetings
+    if (lowerMessage.match(/^(hi|hello|hey|greetings|good morning|good afternoon|good evening)/)) {
+      const greetings = [
+        `Hello ${user?.name || 'there'}! How can I assist you today? 😊`,
+        `Hi! I'm Jarvis, your AI assistant. What would you like to know?`,
+        `Greetings! Ready to help with news, weather, or any questions you have!`,
+        `Hello! I can help you with news, answer questions, or just chat. What's on your mind?`
+      ];
+      return greetings[Math.floor(Math.random() * greetings.length)];
+    }
+
+    // Farewell
+    if (lowerMessage.match(/^(bye|goodbye|see you|farewell|exit|quit)/)) {
+      return `Goodbye ${user?.name || ''}! Feel free to come back anytime. Have a great day! 👋`;
+    }
+
+    // Thanks
+    if (lowerMessage.includes('thank') || lowerMessage.includes('thanks')) {
+      return "You're very welcome! I'm always here to help. Is there anything else you'd like to know? 😊";
+    }
+
+    // Math calculations
+    if (lowerMessage.includes('calculate') || lowerMessage.includes('what is') && /\d/.test(message)) {
+      try {
+        // Simple math expression evaluation
+        const mathExpression = message.match(/[\d+\-*/\s()]+/g);
+        if (mathExpression) {
+          const expr = mathExpression[0].trim();
+          // Safe evaluation of simple math
+          const result = Function('"use strict"; return (' + expr + ')')();
+          return `The answer is: ${result} 🧮`;
+        }
+      } catch (error) {
+        return "I can help with simple math calculations. Try asking something like 'What is 25 + 37?' or 'Calculate 150 * 3'";
+      }
+    }
+
+    // Programming questions
+    if (lowerMessage.includes('programming') || lowerMessage.includes('coding') || lowerMessage.includes('javascript') || lowerMessage.includes('python')) {
+      const programmingResponses = [
+        "I can help with programming concepts! We have great programming books and courses in our Shop section. What specific language or concept interests you?",
+        "Programming is fascinating! Whether you're into JavaScript, Python, or any other language, I can point you to resources. Check our Technology news for latest dev trends!",
+        "As an AI, I love discussing code! Visit our Shop for programming books, or ask me about specific programming concepts you'd like to understand."
+      ];
+      return programmingResponses[Math.floor(Math.random() * programmingResponses.length)];
+    }
+
+    // General knowledge questions
+    if (lowerMessage.includes('what is') || lowerMessage.includes('who is') || lowerMessage.includes('define')) {
+      const knowledgeResponses = [
+        `That's a great question! While I'm specialized in news and this platform's features, I can help you find articles about ${message.replace(/what is|who is|define/gi, '').trim()}. Try searching in our news sections!`,
+        `Interesting topic! You might find detailed information about this in our news articles. Use the search feature to explore ${message.replace(/what is|who is|define/gi, '').trim()}.`,
+        `I'd love to help you learn more about that! Check our various news categories or use the search function to find articles related to ${message.replace(/what is|who is|define/gi, '').trim()}.`
+      ];
+      return knowledgeResponses[Math.floor(Math.random() * knowledgeResponses.length)];
+    }
+
+    // Jokes
+    if (lowerMessage.includes('joke') || lowerMessage.includes('funny')) {
+      const jokes = [
+        "Why don't programmers like nature? It has too many bugs! 🐛",
+        "Why did the developer go broke? Because he used up all his cache! 💸",
+        "How do robots eat guacamole? With computer chips! 🤖",
+        "Why do programmers prefer dark mode? Because light attracts bugs! 🌙"
+      ];
+      return jokes[Math.floor(Math.random() * jokes.length)];
+    }
+
+    // Personal questions about the bot
+    if (lowerMessage.includes('who are you') || lowerMessage.includes('what are you')) {
+      return "I'm Jarvis, your AI assistant! I'm here to help you navigate NewsBoard, find interesting articles, answer questions, and make your experience enjoyable. Think of me as your intelligent companion! 🤖✨";
+    }
+
     // Weather-related commands
     if (lowerMessage.includes('weather') || lowerMessage.includes('temperature')) {
       try {
@@ -238,12 +311,70 @@ const ChatBot = () => {
       return `The current time is ${now.toLocaleTimeString()} on ${now.toLocaleDateString()}. Stay updated with the latest news throughout the day!`;
     }
 
-    // Default intelligent response
+    // Life advice
+    if (lowerMessage.includes('advice') || lowerMessage.includes('suggest') || lowerMessage.includes('recommend')) {
+      const advice = [
+        "Based on what you're asking, I'd suggest exploring our diverse news categories to stay informed. Knowledge is power! 💪",
+        "My advice: Stay curious, read diverse perspectives, and never stop learning. Our news platform is perfect for that!",
+        "I recommend checking our Trending section to see what's important right now, then diving deeper into topics that interest you."
+      ];
+      return advice[Math.floor(Math.random() * advice.length)];
+    }
+
+    // Fun facts
+    if (lowerMessage.includes('fact') || lowerMessage.includes('did you know')) {
+      const facts = [
+        "Did you know? The first computer bug was an actual bug - a moth trapped in Harvard's Mark II computer in 1947! 🦋",
+        "Fun fact: There are more possible iterations of a chess game than atoms in the observable universe! ♟️",
+        "Interesting fact: The @ symbol is about 500 years old and was used by merchants before email existed! 📧",
+        "Did you know? The first website ever created is still online at info.cern.ch! 🌐"
+      ];
+      return facts[Math.floor(Math.random() * facts.length)];
+    }
+
+    // Games and entertainment
+    if (lowerMessage.includes('game') || lowerMessage.includes('play') || lowerMessage.includes('bored')) {
+      return "Feeling bored? Try these:\n\n🎮 Visit our Shop for gaming products\n📰 Play 'News Detective' - guess the news category from headlines\n🔍 Challenge yourself with our Search feature\n🎯 Set a goal to read 5 articles from different categories today!\n\nWant me to recommend some interesting articles?";
+    }
+
+    // Health and wellness
+    if (lowerMessage.includes('health') || lowerMessage.includes('fitness') || lowerMessage.includes('wellness')) {
+      return "Health is wealth! 🏃‍♂️ Check out our Health news section for the latest wellness tips, medical breakthroughs, and fitness trends. We also have health products in our Shop!";
+    }
+
+    // Food and recipes
+    if (lowerMessage.includes('food') || lowerMessage.includes('recipe') || lowerMessage.includes('hungry')) {
+      return "Feeling hungry? 🍕 While I can't cook, I can suggest checking our Shop for food-related products, or search for food news in our Entertainment section. Bon appétit!";
+    }
+
+    // Movies and TV
+    if (lowerMessage.includes('movie') || lowerMessage.includes('film') || lowerMessage.includes('tv show')) {
+      return "🎬 Love movies? Check our Entertainment section for the latest film news, reviews, and celebrity updates. You might also find streaming service deals in our Shop!";
+    }
+
+    // Sports
+    if (lowerMessage.includes('sport') || lowerMessage.includes('football') || lowerMessage.includes('cricket')) {
+      return "⚽ Sports fan? Our Sports section has all the latest scores, player news, and match analysis. Don't miss today's top sports headlines!";
+    }
+
+    // Technology help
+    if (lowerMessage.includes('computer') || lowerMessage.includes('phone') || lowerMessage.includes('device')) {
+      return "📱 Need tech help? Check our Technology news for tips and tricks, or browse our Shop for the latest gadgets and accessories!";
+    }
+
+    // AI and machine learning
+    if (lowerMessage.includes('ai') || lowerMessage.includes('artificial intelligence') || lowerMessage.includes('machine learning')) {
+      return "🤖 AI is fascinating! I'm powered by AI myself. Check our Technology section for the latest AI breakthroughs and developments. The future is here!";
+    }
+
+    // Default intelligent response with more variety
     const responses = [
-      "That's an interesting question! While I don't have specific information about that topic right now, you might find relevant articles in our news sections.",
-      "I understand you're looking for information about that. Try using our search feature to find the most recent articles on this topic.",
-      "Great question! I'm constantly learning and improving. For the most current information, I recommend checking our latest news sections.",
-      "I appreciate your inquiry! You can explore our different news categories or use the search function to find specific information you're looking for."
+      `That's an interesting topic! Let me help you explore "${message.substring(0, 50)}..." - try searching for it in our news sections for the latest information.`,
+      `I appreciate your question about that! While I'm learning every day, you might find great insights in our news articles. Would you like me to help you search?`,
+      `Fascinating question! 🤔 Our platform has diverse content that might cover this. Try browsing different categories or using the search feature.`,
+      `Great question! I'm here to help you navigate NewsBoard and answer questions. For specific topics, our search feature is incredibly powerful!`,
+      `Interesting! While I focus on helping with NewsBoard features, I'd love to help you find relevant articles. What category might this fall under?`,
+      `That's thought-provoking! 💭 Let's explore this together - you can search for related articles or browse our various news categories.`
     ];
 
     return responses[Math.floor(Math.random() * responses.length)];

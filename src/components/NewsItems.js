@@ -88,19 +88,26 @@ export class NewsItems extends Component {
   render() {
     let {title, des ,imageUrl, NewsUrl, author, publishedAt} = this.props;
     const { isBookmarked, bookmarking } = this.state;
+    
+    // Use a fallback image that's reliable
+    const defaultImage = "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80";
+    const displayImage = imageUrl && imageUrl !== "" ? imageUrl : defaultImage;
+    
     return (
       <div className="news-item-container animate-fade-in-up">
         <div className="news-card card-animated hover-lift">
           <div className="news-image-container">
             <img 
-              src={imageUrl || "https://picsum.photos/400/200?random=" + Math.random()} 
+              src={displayImage} 
               className="news-image" 
               alt={title || "News thumbnail"}
               loading="lazy"
               onError={(e) => {
-                // Prevent infinite error loop and use a reliable placeholder
-                e.currentTarget.onerror = null;
-                e.currentTarget.src = "https://picsum.photos/400/200?random=" + Math.random();
+                // Prevent infinite error loop and use a reliable fallback
+                if (e.currentTarget.src !== defaultImage) {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = defaultImage;
+                }
               }}
             />
             <div className="news-overlay">
