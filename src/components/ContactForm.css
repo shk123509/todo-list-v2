@@ -1,0 +1,415 @@
+/* ContactForm Styles */
+
+.contact-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.contact-form-wrapper {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(78, 84, 200, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+}
+
+/* Header */
+.contact-form-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.contact-form-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.contact-form-title i {
+  font-size: 2rem;
+}
+
+.contact-form-subtitle {
+  font-size: 1.1rem;
+  color: #718096;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Alert Messages */
+.alert {
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+}
+
+.alert-success {
+  background: linear-gradient(135deg, #10b981, #34d399);
+  color: white;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.alert-error {
+  background: linear-gradient(135deg, #ef4444, #f87171);
+  color: white;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+.alert i {
+  font-size: 1.2rem;
+}
+
+/* Form Layout */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-label i {
+  color: #4e54c8;
+  width: 16px;
+}
+
+/* Form Inputs */
+.form-input {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #ffffff;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #4e54c8;
+  box-shadow: 0 0 0 3px rgba(78, 84, 200, 0.1);
+  transform: translateY(-2px);
+}
+
+.form-input::placeholder {
+  color: #a0aec0;
+}
+
+.form-select {
+  cursor: pointer;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.character-count {
+  font-size: 0.8rem;
+  color: #a0aec0;
+  text-align: right;
+  margin-top: 0.25rem;
+}
+
+/* Form Actions */
+.form-actions {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+  min-width: 180px;
+  justify-content: center;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(78, 84, 200, 0.3);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.submit-btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.submit-btn.loading {
+  pointer-events: none;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Contact Info */
+.contact-info {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.contact-info-item i {
+  color: #4e54c8;
+  font-size: 1rem;
+}
+
+/* Hover Effects */
+.form-input:hover {
+  border-color: #cbd5e0;
+}
+
+/* Focus States */
+.form-input:focus + .form-label {
+  color: #4e54c8;
+}
+
+/* Validation States */
+.form-input:invalid:not(:placeholder-shown) {
+  border-color: #ef4444;
+}
+
+.form-input:valid:not(:placeholder-shown) {
+  border-color: #10b981;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .contact-form-wrapper {
+    background: #2d3748;
+    border-color: rgba(78, 84, 200, 0.2);
+  }
+  
+  .form-label {
+    color: #e2e8f0;
+  }
+  
+  .form-input {
+    background: #4a5568;
+    border-color: #718096;
+    color: #e2e8f0;
+  }
+  
+  .form-input:focus {
+    background: #4a5568;
+    border-color: #8f94fb;
+  }
+  
+  .form-input::placeholder {
+    color: #a0aec0;
+  }
+  
+  .contact-form-subtitle {
+    color: #a0aec0;
+  }
+  
+  .contact-info {
+    border-color: #4a5568;
+  }
+  
+  .contact-info-item {
+    color: #a0aec0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-form-container {
+    padding: 1rem;
+  }
+  
+  .contact-form-wrapper {
+    padding: 2rem 1.5rem;
+  }
+  
+  .contact-form-title {
+    font-size: 2rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .contact-info {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form-wrapper {
+    padding: 1.5rem 1rem;
+  }
+  
+  .contact-form-title {
+    font-size: 1.8rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .contact-form-title i {
+    font-size: 1.5rem;
+  }
+}
+
+/* Animation Enhancements */
+.form-input:focus {
+  animation: inputFocus 0.3s ease;
+}
+
+@keyframes inputFocus {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Success Animation */
+.alert-success {
+  animation: successPulse 0.6s ease;
+}
+
+@keyframes successPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Error Animation */
+.alert-error {
+  animation: errorShake 0.6s ease;
+}
+
+@keyframes errorShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+/* Button Shimmer Effect */
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.submit-btn:hover::before {
+  left: 100%;
+}
+
+/* Form Field Animation Delays */
+.form-group:nth-child(1) { animation-delay: 0.1s; }
+.form-group:nth-child(2) { animation-delay: 0.2s; }
+.form-group:nth-child(3) { animation-delay: 0.3s; }
+.form-group:nth-child(4) { animation-delay: 0.4s; }

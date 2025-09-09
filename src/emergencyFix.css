@@ -1,0 +1,107 @@
+/* Emergency Fix - Forces all content to be visible */
+/* Import this in App.js temporarily to override animation issues */
+
+/* Force body and all containers visible */
+body,
+html,
+#root,
+.App,
+.main-content,
+.home-container,
+.login-container,
+.signup-container,
+.about-container,
+.contact-container,
+.search-container,
+.shop-container {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  transform: none !important;
+}
+
+/* Override ALL animation classes that might hide content */
+[class*="animate-"],
+[class*="fade-"],
+[class*="slide-"],
+[class*="zoom-"],
+[class*="bounce-"],
+.scroll-animate,
+.page-enter,
+.page-exit,
+.page-enter-active,
+.page-exit-active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Ensure all sections and content are visible */
+section,
+.hero-section,
+.features-section,
+.news-preview-section,
+.stats-section,
+.categories-section {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* Fix any cards or items that might be hidden */
+.card,
+.news-card,
+.feature-card,
+.product-card,
+.category-card,
+.stat-card {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* Fix forms */
+form,
+.form-container,
+.contact-form,
+.login-form,
+.signup-form {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* Remove any overlays that might block content */
+.loading-overlay,
+.modal-backdrop,
+.overlay {
+  display: none !important;
+}
+
+/* Ensure text is visible */
+h1, h2, h3, h4, h5, h6,
+p, span, div, a, button,
+.title, .subtitle, .description {
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: inherit !important;
+}
+
+/* Fix any transform issues */
+* {
+  transform: none !important;
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  -o-transform: none !important;
+}
+
+/* Disable all animations temporarily */
+* {
+  -webkit-animation-duration: 0s !important;
+  animation-duration: 0s !important;
+  -webkit-transition: none !important;
+  transition: none !important;
+}

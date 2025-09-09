@@ -1,41 +1,124 @@
-import React, { useState } from "react";
+import React from "react";
+import ContactForm from './ContactForm';
+import './Contact.css';
 
 const Contact = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 2500);
-  };
-
   return (
-    <div className="container" style={{ maxWidth: 500, margin: "80px auto", marginTop: "80px", background: "#fff", borderRadius: 20, boxShadow: "0 2px 12px rgba(88,101,242,0.12)", padding: "2rem" }}>
-      <h2 style={{ color: "#5865F2", fontWeight: "bold", marginBottom: 20 }}>Contact Us</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label className="form-label">Name</label>
-          <input type="text" className="form-control" name="name" value={form.name} onChange={handleChange} required />
+    <div className="contact-page">
+      <div className="contact-hero animate-fade-in-down">
+        <div className="container">
+          <div className="hero-content">
+            <h1 className="hero-title text-gradient">Contact NewsBoard</h1>
+            <p className="hero-subtitle">
+              We'd love to hear from you! Get in touch with our team for support, feedback, or any questions.
+            </p>
+          </div>
         </div>
-        <div className="mb-3">
-          <label className="form-label">Email</label>
-          <input type="email" className="form-control" name="email" value={form.email} onChange={handleChange} required />
+      </div>
+      
+      <div className="contact-content">
+        <div className="container">
+          <div className="row align-items-start">
+            <div className="col-lg-8">
+              <ContactForm />
+            </div>
+            
+            <div className="col-lg-4">
+              <div className="contact-info-sidebar animate-fade-in-right animate-delay-3">
+                <div className="contact-card">
+                  <h3 className="contact-card-title">
+                    <i className="fas fa-headset"></i>
+                    Get Support
+                  </h3>
+                  <p className="contact-card-text">
+                    Our support team is here to help you with any technical issues or questions about NewsBoard.
+                  </p>
+                  <div className="contact-methods">
+                    <div className="contact-method">
+                      <i className="fas fa-envelope"></i>
+                      <div>
+                        <strong>Email Support</strong>
+                        <p>support@newsboard.com</p>
+                      </div>
+                    </div>
+                    <div className="contact-method">
+                      <i className="fas fa-phone"></i>
+                      <div>
+                        <strong>Phone Support</strong>
+                        <p>+91 98765 43210</p>
+                      </div>
+                    </div>
+                    <div className="contact-method">
+                      <i className="fas fa-clock"></i>
+                      <div>
+                        <strong>Business Hours</strong>
+                        <p>Mon - Fri: 9:00 AM - 6:00 PM IST</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="contact-card">
+                  <h3 className="contact-card-title">
+                    <i className="fas fa-map-marker-alt"></i>
+                    Our Location
+                  </h3>
+                  <p className="contact-card-text">
+                    NewsBoard Headquarters<br/>
+                    Tech Hub, Innovation District<br/>
+                    Mumbai, India 400001
+                  </p>
+                </div>
+                
+                <div className="contact-card">
+                  <h3 className="contact-card-title">
+                    <i className="fas fa-rocket"></i>
+                    Quick Links
+                  </h3>
+                  <div className="quick-links">
+                    <a href="/about" className="quick-link">
+                      <i className="fas fa-info-circle"></i>
+                      About NewsBoard
+                    </a>
+                    <a href="/trending" className="quick-link">
+                      <i className="fas fa-fire"></i>
+                      Trending Topics
+                    </a>
+                    <a href="/dashboard" className="quick-link">
+                      <i className="fas fa-chart-bar"></i>
+                      Your Dashboard
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="mb-3">
-          <label className="form-label">Message</label>
-          <textarea className="form-control" name="message" rows={4} value={form.message} onChange={handleChange} required />
+      </div>
+      
+      <div className="contact-footer animate-fade-in-up animate-delay-4">
+        <div className="container">
+          <div className="footer-content">
+            <h4>Follow Us</h4>
+            <div className="social-links">
+              <button className="social-link hover-glow" aria-label="Follow us on Twitter" onClick={() => window.open('https://twitter.com/newsboard', '_blank')}>
+                <i className="fab fa-twitter"></i>
+              </button>
+              <button className="social-link hover-glow" aria-label="Follow us on Facebook" onClick={() => window.open('https://facebook.com/newsboard', '_blank')}>
+                <i className="fab fa-facebook-f"></i>
+              </button>
+              <button className="social-link hover-glow" aria-label="Follow us on Instagram" onClick={() => window.open('https://instagram.com/newsboard', '_blank')}>
+                <i className="fab fa-instagram"></i>
+              </button>
+              <button className="social-link hover-glow" aria-label="Follow us on LinkedIn" onClick={() => window.open('https://linkedin.com/company/newsboard', '_blank')}>
+                <i className="fab fa-linkedin-in"></i>
+              </button>
+            </div>
+            <p className="footer-text">
+              Stay connected with NewsBoard for the latest updates and news from around the world.
+            </p>
+          </div>
         </div>
-        <button type="submit" className="btn btn-primary w-100" style={{ background: "#5865F2", border: "none", borderRadius: 10, fontWeight: "bold" }}>Send Message</button>
-      </form>
-      {submitted && <div className="alert alert-success mt-3 text-center">Thank you for contacting us!</div>}
-      <div style={{ marginTop: 30, color: "#23272A", fontSize: "0.95rem" }}>
-        <strong>Email:</strong> support@newsboard.com<br />
-        <strong>Phone:</strong> +91 98765 43210
       </div>
     </div>
   );

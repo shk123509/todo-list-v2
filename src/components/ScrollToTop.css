@@ -1,0 +1,237 @@
+/* Scroll to Top Button Styles */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 9998;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.scroll-to-top-btn {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  box-shadow: 0 8px 25px rgba(78, 84, 200, 0.3);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+}
+
+.scroll-to-top-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(78, 84, 200, 0.4);
+}
+
+.scroll-to-top-btn:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.scroll-icon {
+  font-size: 1.2rem;
+  margin-bottom: 2px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.scroll-text {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.progress-ring-circle-progress {
+  transition: stroke-dashoffset 0.1s linear;
+  stroke-linecap: round;
+}
+
+/* Hover Effects */
+.scroll-to-top-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.1) 100%);
+  border-radius: 50%;
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.scroll-to-top-btn:hover::before {
+  transform: translateX(100%);
+}
+
+/* Pulse effect on appearance */
+.scroll-to-top-btn::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  border: 2px solid rgba(78, 84, 200, 0.4);
+  border-radius: 50%;
+  animation: scrollButtonPulse 2s infinite;
+}
+
+@keyframes scrollButtonPulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 90px; /* Account for mobile navigation */
+    left: 20px;
+  }
+
+  .scroll-to-top-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 0.6rem;
+  }
+
+  .scroll-icon {
+    font-size: 1rem;
+  }
+
+  .scroll-text {
+    font-size: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-to-top {
+    bottom: 80px;
+    left: 16px;
+  }
+
+  .scroll-to-top-btn {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Accessibility */
+.scroll-to-top-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(78, 84, 200, 0.4);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .scroll-to-top-btn {
+    border: 2px solid white;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-to-top-btn {
+    animation: none;
+  }
+
+  .scroll-to-top-btn::after {
+    animation: none;
+  }
+
+  .scroll-to-top-btn:hover {
+    transform: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .scroll-to-top-btn {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  }
+
+  .scroll-to-top-btn:hover {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Animation variants */
+.scroll-to-top.variant-bounce {
+  animation: bounceIn 0.6s ease-out forwards;
+}
+
+.scroll-to-top.variant-slide {
+  animation: slideInLeft 0.5s ease-out forwards;
+}
+
+.scroll-to-top.variant-zoom {
+  animation: zoomIn 0.4s ease-out forwards;
+}
+
+/* Custom tooltip */
+.scroll-to-top-btn[title]:hover::before {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  margin-bottom: 8px;
+  opacity: 0;
+  animation: tooltipFadeIn 0.3s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}

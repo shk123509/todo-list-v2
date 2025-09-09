@@ -1,0 +1,88 @@
+/* Login Page Visibility Fixes */
+
+/* Ensure login form is always visible */
+.login-container,
+.login-form-container,
+.login-wrapper {
+  position: relative !important;
+  z-index: 10 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+}
+
+/* Fix overlapping issues */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure form elements are visible */
+.login-form input,
+.login-form button,
+.login-form label,
+.login-form a {
+  position: relative;
+  z-index: 20;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix background overlays */
+.login-page::before,
+.login-page::after {
+  z-index: -1 !important;
+}
+
+/* Ensure all text is visible */
+.login-form h1,
+.login-form h2,
+.login-form h3,
+.login-form p,
+.login-form span {
+  color: inherit !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix input fields */
+.login-form input[type="text"],
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  background: white !important;
+  border: 1px solid #ddd !important;
+  padding: 10px !important;
+  font-size: 16px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Fix submit button */
+.login-form button[type="submit"],
+.login-form .submit-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2) !important;
+  color: white !important;
+  border: none !important;
+  padding: 12px 24px !important;
+  cursor: pointer !important;
+  font-size: 16px !important;
+  width: 100% !important;
+}
+
+/* Remove any problematic animations */
+.login-form * {
+  animation-fill-mode: forwards !important;
+}
+
+/* Ensure navbar doesn't overlap login */
+.navbar {
+  z-index: 1000 !important;
+}
+
+.login-page {
+  padding-top: 80px !important; /* Space for navbar */
+}

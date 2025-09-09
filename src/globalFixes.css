@@ -1,0 +1,283 @@
+/* Global CSS Fixes for UI Overlapping Issues */
+
+/* Fix body padding for navbar */
+body {
+  padding-top: 85px !important;
+  margin: 0 !important;
+  overflow-x: hidden;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Ensure all main content containers have proper spacing */
+.container,
+.container-fluid {
+  position: relative;
+  z-index: 1;
+}
+
+/* Fix for components that might overlap with navbar */
+.home-container,
+.about-container,
+.contact-container,
+.shop-container,
+.profile-container {
+  margin-top: 0 !important;
+  padding-top: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero sections that need special handling */
+.hero-section {
+  margin-top: 0 !important;
+  padding-top: 60px;
+}
+
+/* Fix ChatBot positioning to not overlap with other elements */
+.chat-button {
+  z-index: 9998 !important;
+  bottom: 90px !important;
+  right: 24px !important;
+}
+
+.chat-window {
+  z-index: 9997 !important;
+  bottom: 160px !important;
+}
+
+/* Fix ScrollToTop button positioning */
+.scroll-to-top {
+  z-index: 9996 !important;
+  bottom: 24px !important;
+  left: 24px !important;
+}
+
+/* Ensure modals and dropdowns appear above everything */
+.modal,
+.dropdown-menu,
+.cart-overlay,
+.cart-sidebar {
+  z-index: 10000 !important;
+}
+
+/* Fix navbar to be always on top */
+.navbar {
+  z-index: 9999 !important;
+  position: fixed !important;
+  top: 0 !important;
+  width: 100% !important;
+  background: -webkit-linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%) !important;
+  background: -moz-linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%) !important;
+  background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+  body {
+    padding-top: 75px !important;
+  }
+  
+  .home-container,
+  .about-container,
+  .contact-container,
+  .shop-container {
+    padding-top: 15px;
+  }
+  
+  .chat-button {
+    bottom: 80px !important;
+    right: 20px !important;
+  }
+  
+  .chat-window {
+    bottom: 150px !important;
+    right: 20px !important;
+    width: calc(100vw - 40px) !important;
+    max-width: 360px;
+  }
+  
+  .scroll-to-top {
+    bottom: 20px !important;
+    left: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 70px !important;
+  }
+  
+  .chat-button {
+    width: 50px !important;
+    height: 50px !important;
+    bottom: 70px !important;
+    right: 15px !important;
+  }
+  
+  .scroll-to-top-btn {
+    width: 45px !important;
+    height: 45px !important;
+  }
+}
+
+/* Fix any other overlapping issues */
+.card,
+.feature-card,
+.product-card {
+  position: relative;
+  z-index: 2;
+}
+
+/* Ensure proper spacing for all sections */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Fix for contact form */
+.contact-form-container {
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Fix for shop components */
+.shop-hero {
+  margin-top: 0 !important;
+  padding-top: 60px;
+}
+
+/* Loading states */
+.loading-overlay {
+  z-index: 9995 !important;
+}
+
+/* Ensure buttons don't overlap */
+button,
+.btn {
+  position: relative;
+  z-index: 3;
+}
+
+/* Fix any text that might be cut off */
+h1, h2, h3, h4, h5, h6,
+.title,
+.heading {
+  position: relative;
+  z-index: 2;
+}
+
+/* Fix for profile page */
+.profile-content {
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Weather widget fixes */
+.weather-btn.dropdown .dropdown-menu {
+  z-index: 9998 !important;
+}
+
+/* Make sure all interactive elements are accessible */
+a,
+button,
+input,
+select,
+textarea {
+  position: relative;
+  z-index: 3;
+}
+
+/* Fix for image overlays */
+.product-overlay,
+.image-overlay {
+  z-index: 4;
+}
+
+/* Animation performance */
+* {
+  will-change: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Text adjust fixes */
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Scrollbar styling for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.animate-fade-in,
+.animate-slide-in-up,
+.animate-zoom-in,
+.animate-bounce-in {
+  will-change: transform, opacity;
+  /* Ensure animations don't keep elements hidden */
+  animation-fill-mode: both;
+}
+
+/* Prevent scrollbar issues */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Fix for any remaining overlap issues */
+.main-content {
+  margin-top: 0 !important;
+  position: relative;
+  z-index: 1;
+  clear: both;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #1a202c;
+    color: #e2e8f0;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .navbar,
+  .chat-button,
+  .scroll-to-top-btn {
+    border: 2px solid white;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

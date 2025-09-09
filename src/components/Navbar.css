@@ -1,0 +1,277 @@
+/* Navbar Styles */
+.navbar {
+  z-index: 9999 !important;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Navigation Links */
+.nav-link {
+  transition: all 0.3s ease !important;
+  border-radius: 8px !important;
+  margin: 0 2px;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  transform: translateY(-1px);
+  color: #fff !important;
+}
+
+/* Dropdown Styles */
+.dropdown-menu {
+  border: none !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(20px);
+  animation: fadeInDown 0.3s ease-out;
+}
+
+.dropdown-item {
+  border-radius: 8px !important;
+  margin: 2px 4px;
+  transition: all 0.2s ease !important;
+}
+
+.dropdown-item:hover {
+  background: rgba(78, 84, 200, 0.1) !important;
+  color: #4e54c8 !important;
+  transform: translateX(5px);
+}
+
+/* Button Styles */
+.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  transform: translateY(-1px);
+}
+
+.btn-light:hover {
+  background: rgba(255, 255, 255, 1) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+  .navbar-nav {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-top: 1rem;
+    backdrop-filter: blur(10px);
+  }
+  
+  .nav-item {
+    margin: 2px 0;
+  }
+  
+  .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    box-shadow: none !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fix body padding to prevent overlapping */
+body {
+  padding-top: 80px !important;
+}
+
+/* Ensure content doesn't overlap with fixed navbar */
+.main-content {
+  margin-top: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Navbar Shadow on Scroll */
+.navbar.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(25px);
+}
+
+/* Custom toggler for mobile */
+.custom-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25) !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* User Avatar */
+.user-avatar {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Active Link Styles */
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+/* Weather Button in Navbar */
+.weather-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  color: #fff;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.weather-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+/* Notification Badge */
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ff4757;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+}
+
+/* Search Bar in Navbar */
+.navbar-search {
+  position: relative;
+  max-width: 300px;
+  margin: 0 1rem;
+}
+
+.navbar-search input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 0.4rem 2.5rem 0.4rem 1rem;
+  color: #fff;
+  font-size: 0.85rem;
+  width: 100%;
+}
+
+.navbar-search input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar-search .search-icon {
+  position: absolute;
+  right: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+/* Logo Animation */
+.navbar-brand img {
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+  transform: rotate(360deg);
+}
+
+/* Gradient Text Effect */
+.gradient-text {
+  background: linear-gradient(45deg, #fff, #e2e8f0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Smooth Hover Transitions */
+* {
+  transition: all 0.2s ease !important;
+}
+
+/* Fix for Bootstrap conflicts */
+.navbar .container-fluid {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Responsive adjustments */
+@media (min-width: 992px) {
+  .navbar-nav .nav-link {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px !important;
+  }
+  
+  .main-content {
+    margin-top: 70px;
+  }
+  
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  
+  .navbar-brand small {
+    font-size: 0.5rem;
+  }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .dropdown-menu {
+    background: rgba(45, 55, 72, 0.95) !important;
+    color: #e2e8f0;
+  }
+  
+  .dropdown-item {
+    color: #e2e8f0 !important;
+  }
+  
+  .dropdown-item:hover {
+    background: rgba(78, 84, 200, 0.2) !important;
+    color: #fff !important;
+  }
+}

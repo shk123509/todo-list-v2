@@ -16,8 +16,8 @@ export class News extends Component {
   }
   async componentDidMount() {
     this.props.setProgress(10);
-  // Use a public demo API for news articles
-  let url = `https://gnews.io/api/v4/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=demo&page=${this.state.page}&max=${this.props.pageSize}`;
+    // Use backend proxy to fetch news (avoids exposing API keys)
+    let url = `/api/news/top?country=${this.props.country}&category=${this.props.category}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
 
     this.setState({ loading: true, error: null });
     try {
@@ -51,7 +51,7 @@ export class News extends Component {
     this.props.setProgress(100);
   }
   handlepre = async () => {
-  let url = `https://gnews.io/api/v4/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=demo&page=${this.state.page}&max=${this.props.pageSize}`;
+    let url = `/api/news/top?country=${this.props.country}&category=${this.props.category}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
 
     this.setState({ loading: true, error: null });
     try {
@@ -82,7 +82,7 @@ export class News extends Component {
     }
   };
   fetchData = async () => {
-  let url = `https://gnews.io/api/v4/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=demo&page=${this.state.page}&max=${this.props.pageSize}`;
+    let url = `/api/news/top?country=${this.props.country}&category=${this.props.category}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
 
     this.setState({ page: this.state.page + 1, error: null });
     try {
@@ -118,7 +118,7 @@ export class News extends Component {
       Math.ceil(this.state.totalResults / this.props.pageSize)
     ) {
     } else {
-  let url = `https://gnews.io/api/v4/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=demo&page=${this.state.page}&max=${this.props.pageSize}`;
+      let url = `/api/news/top?country=${this.props.country}&category=${this.props.category}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
       this.setState({ loading: true, error: null });
       try {
         let data = await fetch(url);
