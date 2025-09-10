@@ -292,7 +292,7 @@ const LaptopPricePredictor = () => {
         </div>
 
         <div className="predictor-main">
-          {/* CSV Upload Section */}
+          {/* CSV Upload Section - Top */}
           <div className="csv-upload-section">
             <h2 className="section-title">
               <span className="label-icon">📊</span>
@@ -351,8 +351,10 @@ const LaptopPricePredictor = () => {
             )}
           </div>
           
-          {/* Input Form */}
-          <div className="input-section">
+          {/* Main Content Grid */}
+          <div className="main-sections">
+            {/* Left Side - Input Form */}
+            <div className="input-section">
             <h2 className="section-title">Laptop Specifications</h2>
             
             <div className="spec-grid">
@@ -566,17 +568,17 @@ const LaptopPricePredictor = () => {
                 Reset
               </button>
             </div>
-          </div>
+            </div>
 
-          {/* Prediction Results */}
-          <div className="results-section">
+            {/* Right Side - Results */}
+            <div className="results-section">
             {prediction && (
               <>
                 <div className="prediction-card">
                   <h3 className="prediction-label">Predicted Price</h3>
                   <div className="price-display">
-                    <span className="currency">$</span>
-                    <span className="price-value">{prediction.toLocaleString()}</span>
+                    <span className="currency">₹</span>
+                    <span className="price-value">{(prediction * 83).toLocaleString('en-IN')}</span>
                   </div>
                   <div className="confidence-meter">
                     <div className="confidence-label">
@@ -592,7 +594,7 @@ const LaptopPricePredictor = () => {
                   <div className="price-range">
                     <span className="range-label">Estimated Range:</span>
                     <span className="range-value">
-                      ${(prediction * 0.9).toLocaleString()} - ${(prediction * 1.1).toLocaleString()}
+                      ₹{(prediction * 0.9 * 83).toLocaleString('en-IN')} - ₹{(prediction * 1.1 * 83).toLocaleString('en-IN')}
                     </span>
                   </div>
                 </div>
@@ -612,7 +614,7 @@ const LaptopPricePredictor = () => {
                               background: item.color
                             }}
                           >
-                            <span className="bar-value">${Math.round(item.price)}</span>
+                            <span className="bar-value">₹{Math.round(item.price * 83).toLocaleString('en-IN')}</span>
                           </div>
                         </div>
                       </div>
@@ -642,7 +644,7 @@ const LaptopPricePredictor = () => {
                       <span className="rec-icon">🎯</span>
                       <div className="rec-content">
                         <h4>Alternative</h4>
-                        <p>Similar specs in {formData.brand === 'Apple' ? 'Windows laptops' : 'other brands'} could save you ${Math.round(prediction * 0.15)}</p>
+                        <p>Similar specs in {formData.brand === 'Apple' ? 'Windows laptops' : 'other brands'} could save you ₹{Math.round(prediction * 0.15 * 83).toLocaleString('en-IN')}</p>
                       </div>
                     </div>
                   </div>
@@ -661,14 +663,15 @@ const LaptopPricePredictor = () => {
                       <span className="history-specs">
                         {item.specs.brand} • {item.specs.processor} • {item.specs.ram}GB RAM
                       </span>
-                      <span className="history-price">${item.price}</span>
+                      <span className="history-price">₹{(item.price * 83).toLocaleString('en-IN')}</span>
                     </div>
                   ))}
                 </div>
               </div>
             )}
-          </div>
-        </div>
+            </div>
+          </div> {/* End of main-sections */}
+        </div> {/* End of predictor-main */}
       </div>
     </div>
   );

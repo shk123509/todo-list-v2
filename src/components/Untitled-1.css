@@ -1,0 +1,482 @@
+/* Housing Price Predictor Styles */
+
+.housing-predictor-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* Background Animation - Reuse existing styles */
+.predictor-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-house {
+  position: absolute;
+  font-size: 60px;
+  opacity: 0.1;
+  animation: float 20s infinite ease-in-out;
+}
+
+.house-1 {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.house-2 {
+  top: 60%;
+  right: 15%;
+  animation-delay: 5s;
+}
+
+.house-3 {
+  bottom: 20%;
+  left: 50%;
+  animation-delay: 10s;
+}
+
+.building-pattern {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 100px,
+    rgba(255, 255, 255, 0.03) 100px,
+    rgba(255, 255, 255, 0.03) 200px
+  );
+}
+
+/* CSV Upload Section */
+.csv-upload-section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.upload-area {
+  border: 3px dashed rgba(102, 126, 234, 0.3);
+  border-radius: 15px;
+  padding: 40px;
+  text-align: center;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+}
+
+.upload-area:hover {
+  border-color: rgba(102, 126, 234, 0.5);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+}
+
+.upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upload-label:hover .upload-icon {
+  transform: scale(1.2);
+}
+
+.upload-icon {
+  font-size: 48px;
+  transition: transform 0.3s ease;
+}
+
+.upload-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.upload-hint {
+  font-size: 14px;
+  color: #718096;
+  font-style: italic;
+}
+
+/* Bulk Results */
+.bulk-results {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f7fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.bulk-results h3 {
+  color: #2d3748;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.bulk-table {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.bulk-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.bulk-table th {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.bulk-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #4a5568;
+  font-size: 14px;
+}
+
+.bulk-table tr:last-child td {
+  border-bottom: none;
+}
+
+.bulk-table tr:hover {
+  background: #f8fafc;
+}
+
+.more-results {
+  text-align: center;
+  color: #718096;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.download-btn {
+  background: linear-gradient(135deg, #48bb78, #38a169);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto;
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(72, 187, 120, 0.3);
+}
+
+/* Amenities Section */
+.amenities-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.amenities-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.amenity-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  background: #f7fafc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.amenity-item:hover {
+  background: #edf2f7;
+  border-color: #667eea;
+}
+
+.amenity-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.amenity-label {
+  font-size: 14px;
+  color: #4a5568;
+  user-select: none;
+}
+
+/* Analysis Section */
+.analysis-section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.6s ease;
+}
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.analysis-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  background: linear-gradient(135deg, #f7fafc, #edf2f7);
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.analysis-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.analysis-icon {
+  font-size: 32px;
+}
+
+.analysis-label {
+  font-size: 14px;
+  color: #718096;
+  font-weight: 500;
+}
+
+.analysis-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.trend-up {
+  color: #48bb78;
+}
+
+.trend-down {
+  color: #f56565;
+}
+
+/* Price Range */
+.price-range {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  background: #f7fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  margin-top: 20px;
+}
+
+.range-item {
+  flex: 1;
+  text-align: center;
+}
+
+.range-label {
+  display: block;
+  font-size: 14px;
+  color: #718096;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.range-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .main-sections {
+    grid-template-columns: 1fr;
+  }
+  
+  .results-section {
+    position: static;
+  }
+}
+
+@media (max-width: 1024px) {
+  .predictor-main {
+    padding: 0 10px;
+  }
+  
+  .analysis-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .gradient-text {
+    font-size: 28px;
+  }
+  
+  .spec-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .amenities-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .analysis-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .price-range {
+    flex-direction: column;
+  }
+  
+  .bulk-table {
+    font-size: 12px;
+  }
+  
+  .bulk-table th,
+  .bulk-table td {
+    padding: 8px;
+  }
+}
+
+/* Reuse styles from LaptopPricePredictor.css */
+/* .predictor-content,
+.predictor-header,
+.predictor-title,
+.gradient-text,
+.ml-badge,
+.predictor-subtitle,
+.predictor-main,
+.input-section,
+.section-title,
+.spec-grid,
+.spec-group,
+.spec-label,
+.label-icon,
+.spec-select,
+.slider-container,
+.spec-slider,
+.spec-slider::-webkit-slider-thumb,
+.slider-value,
+.action-buttons,
+.predict-btn,
+.reset-btn,
+.loading-spinner,
+.results-section,
+.prediction-card,
+.prediction-label,
+.price-display,
+.price-value,
+.confidence-meter,
+.confidence-label,
+.confidence-bar,
+.confidence-fill,
+.history-section,
+.section-subtitle,
+.history-list,
+.history-item,
+.history-time,
+.history-specs,
+.history-price { */
+  /* These styles are inherited from LaptopPricePredictor.css */
+  /* The same styles apply here for consistency */
+/* } */
+
+/* Main Content Layout */
+.predictor-main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.main-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.predictor-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.input-section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.results-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+/* Import base styles */
+@import './LaptopPricePredictor.css';
+
+/* Housing-specific overrides */
+.housing-predictor-container .ml-badge {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+}
+
+.housing-predictor-container .predict-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.housing-predictor-container .predict-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #764ba2, #667eea);
+}
